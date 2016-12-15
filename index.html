@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<main class="shelf">
+  {% for resource in site.data.resources  %}
+  <article class="book">
+    <figure class="book-cover">
+      <a href="{{ resource.link }}">
+        <img src="{{ resource.image }}" alt="{{ resource.name }}">
+      </a>
+    </figure>
+    <div class="book-info">
+      <h2>{{ resource.name }} <a href="{{ resource.link }}">&raquo;</a></h2>
+      <p>{{ resource.publisher }} | License: <a href="{{ resource.license-link }}">{{ resource.license }}</a></p>
+      <hr/>
+      <p>{{ resource.excerpt }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</main>
